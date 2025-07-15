@@ -5,5 +5,13 @@ export const conf={
     appwriteCollectionsProducts:String(import.meta.env.VITE_APPWRITE_COLLECTION_PRODUCTS),
     appwriteCollectionsOrders:String(import.meta.env.VITE_APPWRITE_COLLECTION_ORDERS),
     appwriteCollectionsLocations:String(import.meta.env.VITE_APPWRITE_COLLECTION_LOCATIONS),
-    appwriteCollectionsInventory:String(import.meta.env.VITE_APPWRITE_COLLECTION_INVENTORY)
+    appwriteCollectionsInventory:String(import.meta.env.VITE_APPWRITE_COLLECTION_INVENTORY),
+    appwriteCollectionOrderItems:String(import.meta.env.VITE_APPWRITE_COLLECTION_ORDER_ITEMS),
+    appwriteCollectionExpenses:String(import.meta.env.VITE_APPWRITE_COLLECTION_EXPENSES),
+    appwriteGetProfitLossFunction:String(import.meta.env.VITE_APPWRITE_GET_PROFITLOSS_FUNCTION),
+    appwriteGetSoldUnits:String(import.meta.env.VITE_APPWRITE_GET_SOLD_UNITS),
+    appwriteGetCustomerCountFunction:String(import.meta.env.VITE_APPWRITE_GET_CUSTOMER_COUNT_FUNCTION),
+    appwriteGetSalesByLocationFunction:String(import.meta.env.VITE_APPWRITE_GET_SALES_BY_LOCATION_FUNCTION),
+    appwriteApiFunction:String(import.meta.env.VITE_APPWRITE_APIFUNCTION_ENDPOINT),
+    appwriteAPIKey:String(import.meta.env.VITE_APPWRITE_API_KEY),
 }

@@ -1,16 +1,19 @@
-import React from "react";
-import Sidebar from './components/Sidebar';
-import Header from './components/Header';
-import DashboardPage from './pages/DashboardPage'; // Your main dashboard content
-
+import {Sidebar} from './Sidebar.jsx';
+import Header from './Header.jsx';
+import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 function MainLayout(){
+  const [isSidebarOpen,setIsSidebarOpen]=useState(false);
+  
      return (
-    <div className="flex min-h-screen bg-lightBg"> {/* Main container with light background */}
-      <Sidebar />
-      <div className="flex-1 flex flex-col"> {/* Main content area */}
-        <Header />
-        <main className="p-6 flex-1 overflow-auto"> {/* Padding around content, allows scrolling */}
-          <DashboardPage />
+    <div className=" min-h-screen "> {/* Main container with light background */}
+      <Sidebar isSidebarOpen={isSidebarOpen}/>
+      <div className="flex flex-col "> {/* Main content area */}
+        
+        <main className={("p-6 flex-1", isSidebarOpen ? "ml-64" : "ml-0")}> {/* Padding around content, allows scrolling */}
+          <Header toggleButton={()=>setIsSidebarOpen(prev=>!prev)}/>
+            <Outlet/>
+          
         </main>
       </div>
     </div>

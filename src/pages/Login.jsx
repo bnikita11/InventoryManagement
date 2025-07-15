@@ -21,22 +21,20 @@ function Login(){
     const handleEmailChange=(e)=>{
         setEmail(e.target.value);
     }
-    const handleLogin=async(e)=>{
-        e.preventDefault();
-        try {
-            
-            const session=await AuthService.login({email,password})
-            if(session){
-                const userData=await AuthService.getCurrentUser();
-                if(userData) dispatch(authLogin(userData));
-                navigate("/");
-            }
-        } catch (error) {
-            console.error("login error",error)
-            
-        }
+    const handleLogin = async (e) => {
+  e.preventDefault();
+  e.preventDefault();
+  try {
+    const session = await AuthService.login({ email, password });
+    if (session) {
+      const userData = await AuthService.getCurrentUser();
+      if (userData) dispatch(authLogin(userData));
+      navigate("/");
     }
-
+  } catch (error) {
+    console.error("login error", error);
+  }
+};
     return(
         <div className="min-h-screen flex justify-center items-center bg-gradient-to-b from-purple-100 to bg-purple-400">
             <div className="container flex gap-5 flex-col justify-between items-center ">
@@ -83,12 +81,6 @@ function Login(){
                     </div>
             </div>
         </div>
-
-
-
-
-
     )
-
 }
 export default Login;
